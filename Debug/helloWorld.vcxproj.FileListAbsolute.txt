@@ -1,2 +1,0 @@
-C:\Users\Sam\Desktop\CSCI 112\helloWorld\Debug\helloWorld.exe
-C:\Users\Sam\Desktop\CSCI 112\helloWorld\Debug\helloWorld.pdb
