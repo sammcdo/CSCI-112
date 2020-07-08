@@ -15,19 +15,27 @@
 
 /* Function Prototypes */
 void print_title(void);							/* Prints the title of the program. */
-double get_total_hours(void);					/* Gets the hours and minutes from the user and calculate the total number of hours */
+double get_total_hours(void);					/* Given the hours and minutes, calculate the total number of hours */
 double calculate_temperature(double hours);		/* Calculates the temperature of the freezer given the time since power loss */
 void show_results(double temperature);			/* Shows the results (the temperature in celsius) */
 
 
 int main(void) {
-	double total_hours = 0, temperature = 0; /* total_hours stores the converted total time and temperature stores the final temperature of the freezer. */
+	double hours = 0.0, minutes = 0.0; /* Hours and minutes hold the input from the user */
+	double total_hours = 0.0, temperature = 0.0; /* total_hours stores the converted total time and temperature stores the final temperature of the freezer. */
 
 	/* Print the title of the program. */
 	print_title();
 
+	/* Get the number of hours and minutes since power loss. */
+	printf("How many hours have elapsed since power loss? ");
+	scanf("%lf", &hours);
+
+	printf("\nHow many minutes have elapsed since power loss? ");
+	scanf("%lf", &minutes);
+
 	/* Get the total time since power loss from the user. */
-	total_hours = get_total_hours();
+	total_hours = get_total_hours(hours, minutes);
 
 	/* Calculate the temperature based on the elapsed time. */
 	temperature = calculate_temperature(total_hours);
@@ -51,17 +59,9 @@ void print_title(void) {
 }
 
 
-/* Gets the hours and minutes from the user and calculate the total number of hours */
-double get_total_hours(void) {
-	double hours = 0, minutes = 0; /* Hours and minutes hold the input from the user */
+/* Given the hours and minutes, calculate the total number of hours */
+double get_total_hours(double hours, double minutes) {
 	double total_hours = 0; /* The amount of time that has passed since the power loss */
-
-	/* Get the number of hours and minutes since power loss. */
-	printf("How many hours have elapsed since power loss? ");
-	scanf("%lf", &hours);
-
-	printf("\nHow many minutes have elapsed since power loss? ");
-	scanf("%lf", &minutes);
 
 	/* Find the total amount of hours by converting minutes to hours and adding them. */
 	total_hours = hours + (minutes / MIN_IN_HOUR);

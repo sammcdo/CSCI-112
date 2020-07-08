@@ -15,19 +15,27 @@
 
 /* Function Prototypes */
 void print_title(void);												/* Prints the program title. */
-double get_miles_traveled(void);									/* Asks the user for the starting and ending odometer reading and uses that to calculate the miles traveled. */
-double calculate_reimbursement(double miles_traveled);				/* Caclulates the reimbursement given the total distance traveled in miles. */
+double calculate_miles_traveled(double odo_start, double odo_end);  /* Find the total distance traveled based on odometer readings. */
+double calculate_reimbursement(double miles_traveled);				/* Caclulates the reimbursement given the odometry readings. */
 void show_results(double miles_traveled, double reimbursement);		/* Show the formatted results including the total distance traveled, the reimbursement rate and the final reimbursement amount. */
 
 
 int main(void) {
+	double odo_start = 0, odo_end = 0; /* odo_start and odo_end store the odometer readings form the user */
 	double miles_traveled = 0, reimbursement = 0; /* miles_traveled stores the total number of miles the user traveled and reimbursement holds the final payout */
 
 	/* Print the program title */
 	print_title();
 
+	/* Get the starting and ending odometer reading from the user as a double */
+	printf("Enter the beginning odometer reading: ");
+	scanf("%lf", &odo_start);
+
+	printf("Enter the final odometer reading: ");
+	scanf("%lf", &odo_end);
+
 	/* Calculate the total number of miles traveled */
-	miles_traveled = get_miles_traveled();
+	miles_traveled = calculate_miles_traveled(odo_start, odo_end);
 
 	/* Calculate the reimbursement from the total number of miles traveled. */
 	reimbursement = calculate_reimbursement(miles_traveled);
@@ -49,23 +57,14 @@ void print_title(void) {
 }
 
 
-/* Asks the user for the starting and ending odometer reading and uses that to calculate the miles traveled. */
-double get_miles_traveled(void) {
-	double odo_start = 0, odo_end = 0; /* odo_start and odo_end store the odometer readings form the user */
-	double miles_traveled = 0; /* miles_traveled stores the total number of miles traveled */
+/* Find the total distance traveled given odometer readings. */
+double calculate_miles_traveled(double odo_start, double odo_end) {
+	double miles_traveled = 0.0; /* Stores the total distance traveled */
 
-
-	/* Get the starting and ending odometer reading from the user as a double */
-	printf("Enter the beginning odometer reading: ");
-	scanf("%lf", &odo_start);
-
-	printf("Enter the final odometer reading: ");
-	scanf("%lf", &odo_end);
-
-	/* Calculate the total number of miles traveled */
+	/* Calculate the total distance traveled */
 	miles_traveled = odo_end - odo_start;
 
-	return(miles_traveled);
+	return miles_traveled;
 }
 
 
