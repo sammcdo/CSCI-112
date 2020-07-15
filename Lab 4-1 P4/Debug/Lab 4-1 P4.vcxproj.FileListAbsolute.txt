@@ -1,0 +1,2 @@
+C:\Users\Sam\Desktop\CSCI-112\Lab 4-1 P4\Debug\Lab 4-1 P4.exe
+C:\Users\Sam\Desktop\CSCI-112\Lab 4-1 P4\Debug\Lab 4-1 P4.pdb
