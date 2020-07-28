@@ -1,0 +1,5 @@
+﻿  lab6-1p1.c
+C:\Users\Sam\Desktop\CSCI-112\Lab 6-1\lab6-1p1.c(32,11): warning C4098: 'main': 'void' function returning a value
+C:\Users\Sam\Desktop\CSCI-112\Lab 6-1\lab6-1p1.c(59,28): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Sam\Desktop\CSCI-112\Lab 6-1\lab6-1p1.c(91,30): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  Lab 6-1.vcxproj -> C:\Users\Sam\Desktop\CSCI-112\Lab 6-1\Debug\Lab 6-1.exe

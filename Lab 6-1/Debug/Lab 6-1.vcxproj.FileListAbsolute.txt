@@ -1,0 +1,2 @@
+C:\Users\Sam\Desktop\CSCI-112\Lab 6-1\Debug\Lab 6-1.exe
+C:\Users\Sam\Desktop\CSCI-112\Lab 6-1\Debug\Lab 6-1.pdb
